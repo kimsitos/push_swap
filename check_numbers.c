@@ -6,7 +6,7 @@
 /*   By: stcozaci <stcozaci@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/24 12:13:33 by stcozaci          #+#    #+#             */
-/*   Updated: 2025/11/24 12:33:19 by stcozaci         ###   ########.fr       */
+/*   Updated: 2025/11/24 16:02:31 by stcozaci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,27 +29,33 @@ int	is_number(char *argv)
 		i++;
 	}
 	ft_printf("%s is a digit\n", argv);
-	return (1);
+	return (0);
 }
 
-char	*save_numbers(int argc, char *argv)
+char	*save_numbers(int argc, char **argv)
 {
 	int		i;
 	char	*numbers;
 	char	*temp;
 
 	i = 1;
-	numbers = NULL;
-	while (argc >= i)
+	numbers = ft_strdup("");
+	while (argc > i)
 	{
+		if (!argv[i])
+			break ;
 		temp = numbers;
 		numbers = ft_strjoin(temp, argv[i]);
 		free(temp);
+		i++;
 	}
+	ft_printf("the numbers are: %s\n", numbers);
 	return (numbers);
 }
 
-int main(int argc, char *argv[])
+int	main(int argc, char *argv[])
 {
-	save_numbers
+	char *numbers;
+
+	numbers = save_numbers(argc, argv);
 }
