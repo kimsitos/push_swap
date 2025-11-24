@@ -6,7 +6,7 @@
 #    By: stcozaci <stcozaci@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/11/21 15:37:34 by stcozaci          #+#    #+#              #
-#    Updated: 2025/11/21 16:35:46 by stcozaci         ###   ########.fr        #
+#    Updated: 2025/11/24 12:15:02 by stcozaci         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ CFLAGS = -Wall -Werror -Wextra
 
 LIB = libft/libft.a
 
-SRC = main.c
+SRC = main.c check_numbers.c
 
 RM = rm -f
 
