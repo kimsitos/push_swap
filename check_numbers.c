@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: stcozaci <stcozaci@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/24 12:13:33 by stcozaci          #+#    #+#             */
-/*   Updated: 2025/11/24 16:47:39 by stcozaci         ###   ########.fr       */
+/*   Created: 2025/11/26 11:27:35 by stcozaci          #+#    #+#             */
+/*   Updated: 2025/11/26 12:21:32 by stcozaci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,8 @@ char	*save_numbers(int argc, char **argv)
 	{
 		if (!argv[i])
 			break ;
-		temp = numbers;
+		temp = ft_strjoin (numbers, " ");
+		free(numbers);
 		numbers = ft_strjoin(temp, argv[i]);
 		free(temp);
 		i++;
@@ -48,23 +49,31 @@ char	*save_numbers(int argc, char **argv)
 	return (numbers);
 }
 
-int	main(int argc, char *argv[])
+int *get_numbers(char *dirt_num)
 {
-	char	**numbers;
-	char	*temp;
-	int		i;
+	int	i;
+	int	*clean_num;
 
 	i = 0;
-	temp = save_numbers(argc, argv);
-	numbers = ft_split(temp, ' ');
-	while (numbers[i])
+	while (dirt_num[i])
 	{
-		if (!is_number(numbers[i]))
+		if (!is_number(dirt_num[i]))
 		{
-			ft_printf("fallo, %s no es un numero\n", numbers[i]);
+			ft_printf("%s is not a number", dirt_num[i]);
 			return (0);
 		}
-		ft_printf("%s si es un número\n", numbers[i]);
 		i++;
 	}
+	clean_num = malloc(sizeof(int) * i);
+	if (!clean_num)
+		return (0;)
+	i = 0;
+	while (dirt_num[i])
+	{
+		clean_num[i] = ft_atoi(dirt_num[i]);
+		free(dirt_num[i]);
+		i++;
+	}
+	free (dirt_num[i]);
+	return (clean_num);
 }
