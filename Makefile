@@ -6,7 +6,7 @@
 #    By: stcozaci <stcozaci@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/11/21 15:37:34 by stcozaci          #+#    #+#              #
-#    Updated: 2025/11/26 11:28:32 by stcozaci         ###   ########.fr        #
+#    Updated: 2025/11/26 13:19:24 by stcozaci         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,11 +14,11 @@ NAME = push_swap
 
 CC = cc
 
-CFLAGS = -Wall -Werror -Wextra -g3
+CFLAGS = -Wall -Werror -Wextra -g3 -fsanitize=address
 
 LIB = libft/libft.a
 
-SRC = main.c check_numbers.c
+SRC = main.c check_numbers.c free_char_arry.c
 
 RM = rm -f
 

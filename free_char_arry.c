@@ -1,26 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   free_char_arry.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: stcozaci <stcozaci@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/21 14:46:08 by stcozaci          #+#    #+#             */
-/*   Updated: 2025/11/26 12:40:30 by stcozaci         ###   ########.fr       */
+/*   Created: 2025/11/26 12:37:47 by stcozaci          #+#    #+#             */
+/*   Updated: 2025/11/26 13:02:34 by stcozaci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
-# include "libft/libft.h"
+#include "push_swap.h"
 
-//temp for check_numbers
-int		is_number(char *argv);
-char	**save_numbers(int argc, char **argv);
+void	free_char_arry(char **arry)
+{
+	int	i;
 
-//auxiliar functions
-void	free_char_arry(char **arry);
-
-//important functions
-int		*get_numbers(char **dirt_num);
-#endif
+	i = 0;
+	while (arry[i])
+	{
+		free(arry[i]);
+		i++;
+	}
+	free(arry);
+}

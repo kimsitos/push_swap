@@ -6,7 +6,7 @@
 /*   By: stcozaci <stcozaci@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/26 11:57:36 by stcozaci          #+#    #+#             */
-/*   Updated: 2025/11/26 12:18:51 by stcozaci         ###   ########.fr       */
+/*   Updated: 2025/11/26 13:59:54 by stcozaci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,11 @@ int	main(int argc, char *argv[])
 
 	i = 0;
 	numbers = get_numbers(save_numbers(argc, argv));
-	while (numbers[i])
+	/* while (i <= argc - 1)
 	{
-		ft_printf("%d is a number!!", numbers[i]);
+		ft_printf("%d is a number!!\n", numbers[i]);
 		i++;
-	}
+	} */
+	free(numbers);
 	return (0);
 }
