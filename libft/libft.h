@@ -6,7 +6,7 @@
 /*   By: stcozaci <stcozaci@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/29 16:30:33 by stcozaci          #+#    #+#             */
-/*   Updated: 2025/11/11 12:15:15 by stcozaci         ###   ########.fr       */
+/*   Updated: 2025/11/26 20:40:58 by stcozaci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,16 @@
 # ifndef BUFFER_SIZE 
 #  define BUFFER_SIZE 10
 # endif
+
+//structure
+typedef struct s_list
+{
+	void			*content;
+	struct s_list	*next;
+}	t_list;
+
+//bonus functions
+t_list *ft_lstnew(void *content);
 
 //ft_printf
 int		ft_printf(char const *str, ...);
@@ -72,4 +82,5 @@ void	ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
 char	*get_next_line(int fd);
+
 #endif
