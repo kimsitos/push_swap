@@ -1,25 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   debug.c                                            :+:      :+:    :+:   */
+/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: stcozaci <stcozaci@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/28 15:26:43 by stcozaci          #+#    #+#             */
-/*   Updated: 2025/11/28 20:53:20 by stcozaci         ###   ########.fr       */
+/*   Created: 2025/11/27 13:27:05 by stcozaci          #+#    #+#             */
+/*   Updated: 2025/11/28 20:36:06 by stcozaci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
-#include <stdio.h>
+#include "../push_swap.h"
 
-void	print_list(t_list *lst)
+void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	while (lst->content)
+	t_list	*temp;
+
+	temp = ft_lstlast(*lst);
+	if (temp == NULL)
 	{
-		printf("Pointer number %p\n", (void *)lst);
-		printf("Content number %d\n", lst->content);
-		printf("-------------------------------\n");
-		lst = lst->next;
+		*lst = new;
+		return ;
 	}
+	temp->next = new;
 }

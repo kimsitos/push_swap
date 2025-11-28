@@ -6,7 +6,7 @@
 /*   By: stcozaci <stcozaci@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/28 10:29:46 by stcozaci          #+#    #+#             */
-/*   Updated: 2025/11/28 16:54:37 by stcozaci         ###   ########.fr       */
+/*   Updated: 2025/11/28 20:54:36 by stcozaci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,44 +26,53 @@ static int	is_number(char *number)
 	return (1);
 }
 
-int	*add_number(char *temp)
+t_list	*itolist(char *argv)
 {
-	int	*value;
+	t_list	*lst;
+	char	**temp;
+	int		j;
 
-	value = malloc(sizeof(int));
-	if (!value)
+	j = 0;
+	temp = ft_split(argv, ' ');
+	lst = malloc(sizeof(t_list));
+	if (!lst)
 		return (0);
-	*value = ft_atoi(temp);
-	return (value);
+	while (temp[j])
+	{
+		ft_printf("HA LLEGADO AL BUCLE DE ITOLIST");
+		if (!is_number(temp[j]))
+		{
+			ft_freearry_string(temp);
+			ft_lstclear(&lst);
+			ft_printf("Error\n");
+			return (NULL);
+		}
+		ft_lstadd_back(&lst, ft_lstnew(ft_atoi(temp[j])));
+		j++;
+	}
+	ft_freearry_string(temp);
+	return (lst);
 }
 
-t_list	*get_numbers(char **argv)
+t_list	*parse(char **argv)
 {
 	int		i;
-	int		j;
-	char	**temp;
 	t_list	*numbers;
+	t_list	*temp;
 
 	i = 1;
 	numbers = malloc(sizeof(t_list));
-	if(!numbers)
+	if (!numbers)
 		return (0);
 	while (argv[i])
 	{
-		j = 0;
-		temp = ft_split(argv[i], ' ');
-		while (temp[j])
+		temp = itolist(argv[i]);
+		if (temp == NULL)
 		{
-			if (is_number(temp[j]))
-				ft_lstadd_back(&numbers, ft_lstnew(add_number(temp[j])));
-			else
-			{
-				ft_lstclear(&numbers, free);
-				ft_printf("Error, invalid argument(s)");
-				return (0);
-			}
-			j++;
+			ft_lstclear(&temp);
+			exit (1);
 		}
+		ft_lstadd_back(&numbers, temp);
 		i++;
 	}
 	return (numbers);
