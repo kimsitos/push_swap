@@ -6,7 +6,7 @@
 /*   By: stcozaci <stcozaci@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/28 11:04:05 by stcozaci          #+#    #+#             */
-/*   Updated: 2025/11/11 12:14:25 by stcozaci         ###   ########.fr       */
+/*   Updated: 2025/11/28 10:01:07 by stcozaci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ static char	*fill_line(char *rest)
 	char	*line;
 
 	i = 0;
-	j = 0; 
+	j = 0;
 	if (!rest || !rest[0])
 		return (NULL);
 	while (rest[i] != '\n' && rest[i])
@@ -88,22 +88,4 @@ char	*get_next_line(int fd)
 	rest = ft_substr(temp, ft_strlen(line), ft_strlen(temp) - ft_strlen(line));
 	free(temp);
 	return (line);
-}
-
-#include <fcntl.h>
-#include <stdio.h>
-
-int main(void)
-{
-	int fd = open("text.txt", O_RDONLY);
-	char *linea;
-	int i = 1;
-	while ((linea = get_next_line(fd)))
-	{
-		printf ("##RESULT NUMBER %d##%s", i, linea);
-		free(linea);
-		i++;
-	}
-	close(fd);
-	return (0);
 }

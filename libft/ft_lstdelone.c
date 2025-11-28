@@ -1,19 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: stcozaci <stcozaci@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/26 11:57:36 by stcozaci          #+#    #+#             */
-/*   Updated: 2025/11/28 10:10:58 by stcozaci         ###   ########.fr       */
+/*   Created: 2025/11/27 15:18:36 by stcozaci          #+#    #+#             */
+/*   Updated: 2025/11/27 15:52:50 by stcozaci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-int	main()
+void	ft_lstdelone(t_list *lst, void (*del)(void *))
 {
-	ft_printf("hello");
-	return 0;
+	if (lst && del)
+	{
+		(*del)(lst->content);
+		free(lst);
+	}
 }
+// #include <stdio.h>
+// int	main(void)
+// {
+// 	t_list *h = ft_lstnew(ft_strdup("THREE"));
+// 	printf("Content before: %s\n", (char *) h->content);
+// 	ft_lstdelone(h, free);
+// 	printf("Content after: %s\n", (char *) h->content);
+// 	return (0);
+// }

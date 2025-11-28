@@ -1,38 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*   ft_lstlast.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: stcozaci <stcozaci@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/26 18:56:37 by stcozaci          #+#    #+#             */
-/*   Updated: 2025/11/27 18:03:39 by stcozaci         ###   ########.fr       */
+/*   Created: 2025/11/27 13:05:49 by stcozaci          #+#    #+#             */
+/*   Updated: 2025/11/27 13:25:17 by stcozaci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list	*ft_lstnew(void *content)
+t_list	*ft_lstlast(t_list *lst)
 {
-	t_list	*node;
+	t_list	*temp;
 
-	node = malloc(sizeof(t_list));
-	if (!node)
-		return (0);
-	node->content = content;
-	node->next = NULL;
-	return (node);
+	if (!lst)
+		return (NULL);
+	temp = lst;
+	while (temp->next)
+		temp = temp->next;
+	return (temp);
 }
-
 // #include <stdio.h>
 
 // int main(void)
 // {
-// 	t_list *test;
+// 	t_list *h = ft_lstnew("hello");
 
-// 	test = ft_lstnew("hello world");
-// 	printf("%s\n", (char *)test->content);
-// 	if(test->next == NULL)
-// 		printf("Yes null\n");
-// 	return (0);
+// 	int i = 0;
+// 	while(i < 3)
+// 	{
+// 		ft_lstadd_front(&h, ft_lstnew("nope"));
+// 		i++;
+// 	}
+// 	t_list	*great = NULL;
+// 	t_list *temp = ft_lstlast(great);
+// 	printf("%s", (char *)temp->content);
+// 	if (temp->next == NULL)
+// 		printf("is last");
+// 	return 0;
 // }

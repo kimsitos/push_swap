@@ -1,38 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: stcozaci <stcozaci@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/26 18:56:37 by stcozaci          #+#    #+#             */
-/*   Updated: 2025/11/27 18:03:39 by stcozaci         ###   ########.fr       */
+/*   Created: 2025/11/27 13:27:05 by stcozaci          #+#    #+#             */
+/*   Updated: 2025/11/27 15:02:04 by stcozaci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list	*ft_lstnew(void *content)
+void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	t_list	*node;
+	t_list	*temp;
 
-	node = malloc(sizeof(t_list));
-	if (!node)
-		return (0);
-	node->content = content;
-	node->next = NULL;
-	return (node);
+	temp = ft_lstlast(*lst);
+	if (temp == NULL)
+	{
+		*lst = new;
+		return ;
+	}
+	temp->next = new;
 }
 
 // #include <stdio.h>
 
-// int main(void)
+// int	main()
 // {
-// 	t_list *test;
+// 	t_list *list = NULL;
+// 	t_list *temp = ft_lstlast(list);
 
-// 	test = ft_lstnew("hello world");
-// 	printf("%s\n", (char *)test->content);
-// 	if(test->next == NULL)
-// 		printf("Yes null\n");
-// 	return (0);
+// 	ft_lstadd_back(&list, ft_lstnew("something"));
+// 	temp = ft_lstlast(list);
+// 	printf("\nBEFORE LIST ULTIMO NODO:  %s\n", (char *)temp->content);
+// 	return 0;
 // }

@@ -1,38 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: stcozaci <stcozaci@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/26 18:56:37 by stcozaci          #+#    #+#             */
-/*   Updated: 2025/11/27 18:03:39 by stcozaci         ###   ########.fr       */
+/*   Created: 2025/11/27 11:28:14 by stcozaci          #+#    #+#             */
+/*   Updated: 2025/11/27 12:23:43 by stcozaci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list	*ft_lstnew(void *content)
+void	ft_lstadd_front(t_list **lst, t_list *new)
 {
-	t_list	*node;
-
-	node = malloc(sizeof(t_list));
-	if (!node)
-		return (0);
-	node->content = content;
-	node->next = NULL;
-	return (node);
+	if (lst && new)
+	{
+		new->next = *lst;
+		*lst = new;
+	}
 }
 
 // #include <stdio.h>
 
-// int main(void)
+// int	main()
 // {
-// 	t_list *test;
+// 	t_list *list = ft_lstnew("World ");
+// 	t_list *node = ft_lstnew("hello ");
 
-// 	test = ft_lstnew("hello world");
-// 	printf("%s\n", (char *)test->content);
-// 	if(test->next == NULL)
-// 		printf("Yes null\n");
-// 	return (0);
+// 	printf("AFTER LIST CONTENT: %s\n", (char *)list->content);
+// 	printf("NODE CONTENT: %s\n", (char *)node->content);
+
+// 	ft_lstadd_front(&list, node);
+
+// 	printf("\n\nBEFORE LIST PRIMER NODO:  %s\n", (char *)list->content);
+// 	return 0;
 // }

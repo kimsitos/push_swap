@@ -1,38 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: stcozaci <stcozaci@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/26 18:56:37 by stcozaci          #+#    #+#             */
-/*   Updated: 2025/11/27 18:03:39 by stcozaci         ###   ########.fr       */
+/*   Created: 2025/11/27 12:25:13 by stcozaci          #+#    #+#             */
+/*   Updated: 2025/11/27 12:45:01 by stcozaci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list	*ft_lstnew(void *content)
+int	ft_lstsize(t_list *lst)
 {
-	t_list	*node;
+	t_list	*temp;
+	int		i;
 
-	node = malloc(sizeof(t_list));
-	if (!node)
-		return (0);
-	node->content = content;
-	node->next = NULL;
-	return (node);
+	i = 0;
+	temp = lst;
+	while (temp)
+	{
+		temp = temp->next;
+		i++;
+	}
+	return (i);
 }
 
 // #include <stdio.h>
 
 // int main(void)
 // {
-// 	t_list *test;
+// 	int i = 0;
 
-// 	test = ft_lstnew("hello world");
-// 	printf("%s\n", (char *)test->content);
-// 	if(test->next == NULL)
-// 		printf("Yes null\n");
-// 	return (0);
+// 	// char c = 'a';
+// 	t_list *list = ft_lstnew("h");
+
+// 	while(i <= 5)
+// 	{
+// 		ft_lstadd_front(&list, ft_lstnew("s"));
+// 		i++;
+// 	}
+// 	printf ("longitud de list = %d", ft_lstsize(list));
 // }

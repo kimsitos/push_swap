@@ -6,7 +6,7 @@
 /*   By: stcozaci <stcozaci@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/29 16:30:33 by stcozaci          #+#    #+#             */
-/*   Updated: 2025/11/26 20:40:58 by stcozaci         ###   ########.fr       */
+/*   Updated: 2025/11/27 18:55:22 by stcozaci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,16 +27,14 @@ typedef struct s_list
 }	t_list;
 
 //bonus functions
-t_list *ft_lstnew(void *content);
-
-//ft_printf
-int		ft_printf(char const *str, ...);
-int		ft_putchar(char c);
-int		ft_putstr(char *s);
-int		ft_putp(void *addr);
-int		ft_putnbr(int n);
-int		ft_putunsign(unsigned int nb);
-int		ft_puthex(unsigned long long nb, char *strhex);
+t_list	*ft_lstnew(void *content);
+void	ft_lstadd_front(t_list **lst, t_list *new);
+int		ft_lstsize(t_list *lst);
+t_list	*ft_lstlast(t_list *lst);
+void	ft_lstadd_back(t_list **lst, t_list *new);
+void	ft_lstdelone(t_list *lst, void (*del)(void *));
+void	ft_lstclear(t_list **lst, void (*del)(void *));
+void	ft_lstiter(t_list *lst, void (*f)(void *));
 
 //ctype.h
 int		ft_isalnum(int c);
@@ -81,6 +79,17 @@ void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
+
+//get_next_line
 char	*get_next_line(int fd);
+
+//ft_printf
+int		ft_printf(char const *str, ...);
+int		ft_putchar(char c);
+int		ft_putstr(char *s);
+int		ft_putp(void *addr);
+int		ft_putnbr(int n);
+int		ft_putunsign(unsigned int nb);
+int		ft_puthex(unsigned long long nb, char *strhex);
 
 #endif

@@ -6,7 +6,7 @@
 #    By: stcozaci <stcozaci@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/10/13 12:05:35 by stcozaci          #+#    #+#              #
-#    Updated: 2025/11/26 20:16:59 by stcozaci         ###   ########.fr        #
+#    Updated: 2025/11/28 10:16:48 by stcozaci         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,13 +18,18 @@ ft_memmove.c ft_memset.c ft_putchar_fd.c ft_putendl_fd.c ft_putnbr_fd.c ft_putst
 ft_strlen.c ft_split.c ft_strchr.c ft_strdup.c ft_striteri.c ft_strjoin.c ft_strlcat.c \
 ft_strlcpy.c ft_strmapi.c ft_strncmp.c ft_strnstr.c ft_strrchr.c ft_strtrim.c ft_substr.c\
 ft_tolower.c ft_toupper.c ft_printf.c ft_putchar.c ft_puthex.c ft_putnbr.c ft_putstr.c\
-ft_putunsign.c  get_next_line.c ft_lstnew.c
+ft_putunsign.c get_next_line.c
+
+SRCBONUS = ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c ft_lstadd_back.c ft_lstdelone.c\
+ft_lstclear.c ft_lstiter.c
 
 CC = cc
 
 CFLAGS = -Wall -Werror -Wextra
 
 OBJ = $(SRC:.c=.o)
+
+OBJBONUS = $(SRCBONUS:.c=.o)
 
 RM = rm -f
 
@@ -38,11 +43,14 @@ $(NAME): $(OBJ)
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@ 
 clean: 
-	$(RM) $(OBJ)
+	$(RM) $(OBJ) $(OBJBONUS)
 
 fclean: clean
 	$(RM) $(NAME)
 	
 re: fclean all
 
-.PHONY: all clean fclean re
+bonus: $(OBJBONUS) $(NAME)
+	$(AR) $(NAME) $(OBJBONUS)
+
+.PHONY: all clean fclean re bonus
