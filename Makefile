@@ -1,33 +1,23 @@
-# **************************************************************************** #
-#                                                                              #
-#                                                         :::      ::::::::    #
-#    Makefile                                           :+:      :+:    :+:    #
-#                                                     +:+ +:+         +:+      #
-#    By: stcozaci <stcozaci@student.42madrid.com    +#+  +:+       +#+         #
-#                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2025/11/21 15:37:34 by stcozaci          #+#    #+#              #
-#    Updated: 2025/11/28 10:13:41 by stcozaci         ###   ########.fr        #
-#                                                                              #
-# **************************************************************************** #
-
 NAME = push_swap
 
 CC = cc
 
-CFLAGS = -Wall -Werror -Wextra -g3 -fsanitize=address
+CFLAGS = -Wall -Werror -Wextra
 
 LIB = libft/libft.a
 
-SRC = main.c
+SRC = main.c checker.c debug.c
 
 RM = rm -f
 
 OBJ = $(SRC:.c=.o)
 
+MAKELIB = make -C libft
+
 all: $(NAME)
 
 $(LIB): libft/Makefile
-	make -C libft all bonus
+	$(MAKELIB) all bonus
 
 $(NAME): $(OBJ) $(LIB)
 	$(CC) $(CFLAGS) $(OBJ) $(LIB) -o $(NAME)
@@ -37,11 +27,11 @@ $(NAME): $(OBJ) $(LIB)
 
 clean: 
 	$(RM) $(OBJ)
-	make -C libft clean
+	$(MAKELIB) clean
 
 fclean: clean
 	$(RM) $(NAME)
-	make -C libft fclean
+	$(MAKELIB) fclean
 
 re: fclean all
 

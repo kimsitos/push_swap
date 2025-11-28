@@ -6,13 +6,13 @@
 /*   By: stcozaci <stcozaci@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/26 18:56:37 by stcozaci          #+#    #+#             */
-/*   Updated: 2025/11/27 18:03:39 by stcozaci         ###   ########.fr       */
+/*   Updated: 2025/11/28 17:21:03 by stcozaci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list	*ft_lstnew(void *content)
+t_list	*ft_lstnew(int content)
 {
 	t_list	*node;
 

@@ -6,7 +6,7 @@
 /*   By: stcozaci <stcozaci@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/21 14:46:08 by stcozaci          #+#    #+#             */
-/*   Updated: 2025/11/26 12:40:30 by stcozaci         ###   ########.fr       */
+/*   Updated: 2025/11/28 16:05:37 by stcozaci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,9 @@
 # define PUSH_SWAP_H
 # include "libft/libft.h"
 
-//temp for check_numbers
-int		is_number(char *argv);
-char	**save_numbers(int argc, char **argv);
+t_list	*get_numbers(char **argv);
 
-//auxiliar functions
-void	free_char_arry(char **arry);
+//debuging
+void	print_list(t_list *lst);
 
-//important functions
-int		*get_numbers(char **dirt_num);
 #endif

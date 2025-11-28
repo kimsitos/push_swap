@@ -1,26 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   free_char_arry.c                                   :+:      :+:    :+:   */
+/*   debug.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: stcozaci <stcozaci@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/26 12:37:47 by stcozaci          #+#    #+#             */
-/*   Updated: 2025/11/26 13:02:34 by stcozaci         ###   ########.fr       */
+/*   Created: 2025/11/28 15:26:43 by stcozaci          #+#    #+#             */
+/*   Updated: 2025/11/28 17:05:26 by stcozaci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+#include <stdio.h>
 
-void	free_char_arry(char **arry)
+void	print_list(t_list *lst)
 {
-	int	i;
-
-	i = 0;
-	while (arry[i])
+	int i = 0;
+	while (lst)
 	{
-		free(arry[i]);
+		int *content = lst->content;
+		printf("Pointer number %d %p\n",i , (void *)lst);
+		printf("Content number %d %d\n", i, *content);
+		printf("-------------------------------\n");
+		lst = lst->next;
 		i++;
 	}
-	free(arry);
 }
