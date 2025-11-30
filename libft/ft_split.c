@@ -6,7 +6,7 @@
 /*   By: stcozaci <stcozaci@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/08 13:32:41 by stcozaci          #+#    #+#             */
-/*   Updated: 2025/10/28 13:37:37 by stcozaci         ###   ########.fr       */
+/*   Updated: 2025/11/30 04:28:31 by stcozaci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,11 +72,9 @@ static char	**ft_split_words(char **str, char *s, int c)
 
 char	**ft_split(const char *s, int c)
 {
-	int		i;
 	size_t	word;
 	char	**str;
-
-	i = 0;
+	
 	word = ft_count_words(s, c);
 	str = (char **)malloc((word + 1) * sizeof(char *));
 	if (!str)
