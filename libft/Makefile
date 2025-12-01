@@ -6,7 +6,7 @@
 #    By: stcozaci <stcozaci@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/10/13 12:05:35 by stcozaci          #+#    #+#              #
-#    Updated: 2025/11/28 19:43:41 by stcozaci         ###   ########.fr        #
+#    Updated: 2025/12/01 09:52:03 by stcozaci         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ ft_memmove.c ft_memset.c ft_putchar_fd.c ft_putendl_fd.c ft_putnbr_fd.c ft_putst
 ft_strlen.c ft_split.c ft_strchr.c ft_strdup.c ft_striteri.c ft_strjoin.c ft_strlcat.c \
 ft_strlcpy.c ft_strmapi.c ft_strncmp.c ft_strnstr.c ft_strrchr.c ft_strtrim.c ft_substr.c\
 ft_tolower.c ft_toupper.c ft_printf.c ft_putchar.c ft_puthex.c ft_putnbr.c ft_putstr.c\
-ft_putunsign.c get_next_line.c ft_freearry_string.c
+ft_putunsign.c get_next_line.c ft_freearry_string.c ft_atol.c
 
 CC = cc
 

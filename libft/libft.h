@@ -6,7 +6,7 @@
 /*   By: stcozaci <stcozaci@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/29 16:30:33 by stcozaci          #+#    #+#             */
-/*   Updated: 2025/11/28 19:44:33 by stcozaci         ###   ########.fr       */
+/*   Updated: 2025/12/01 09:52:13 by stcozaci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,5 +77,6 @@ int		ft_puthex(unsigned long long nb, char *strhex);
 
 //my funct
 void	ft_freearry_string(char **str);
+long	ft_atol(const char *ntpr);
 
 #endif
