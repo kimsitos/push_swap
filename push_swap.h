@@ -6,7 +6,7 @@
 /*   By: stcozaci <stcozaci@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/21 14:46:08 by stcozaci          #+#    #+#             */
-/*   Updated: 2025/11/28 20:23:02 by stcozaci         ###   ########.fr       */
+/*   Updated: 2025/12/01 12:53:48 by stcozaci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ typedef struct s_list
 
 //push_swap functions
 t_list	*parse(char **argv);
+int		order(t_list *lst);
+void	s(t_list **lst);
 
 //lists functions
 void	ft_lstadd_front(t_list **lst, t_list *new);

@@ -1,25 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: stcozaci <stcozaci@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/26 11:57:36 by stcozaci          #+#    #+#             */
-/*   Updated: 2025/12/01 13:08:52 by stcozaci         ###   ########.fr       */
+/*   Created: 2025/12/01 10:39:13 by stcozaci          #+#    #+#             */
+/*   Updated: 2025/12/01 13:21:37 by stcozaci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	main(int argn, char **argv)
+int	order(t_list *lst)
 {
-	if (!argn)
-		return (0);
-	t_list *lst = parse(argv);
-	print_list(lst);
-	ft_lstclear(&lst);
-	s(&lst);
-	print_list(lst);
-	return (0);
+	int		temp_nb;
+
+	while (lst)
+	{
+		temp_nb = lst->content;
+		lst = lst->next;
+		if (lst && temp_nb > lst->content)
+			return (0);
+	}
+	return (1);
+}
+
+void	s(t_list **lst)
+{
+	t_list	*temp_first;
+	t_list	*temp_second;
+
+	temp_first = *lst;
+	ft_printf(".\n");
+	temp_second = (*lst)->next;
+	ft_printf(":\n");
+	temp->next = (*lst)->next;
+	ft_printf("?\n");
+	(*lst)->next = temp;
+	ft_printf("swaped i think\n");
 }
