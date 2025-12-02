@@ -6,7 +6,7 @@
 /*   By: stcozaci <stcozaci@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/21 14:46:08 by stcozaci          #+#    #+#             */
-/*   Updated: 2025/12/02 16:13:38 by stcozaci         ###   ########.fr       */
+/*   Updated: 2025/12/02 16:59:41 by stcozaci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@ t_list	*parse(char **argv);
 int		order(t_list *lst);
 
 //swap functions
-void	s(t_list **lst);
 void	sa(t_list **lst);
 void	sb(t_list **lst);
 void	ss(t_list **a, t_list **b);
@@ -34,6 +33,14 @@ void	ss(t_list **a, t_list **b);
 //push functions
 void	pa(t_list **a, t_list **b);
 void	pb(t_list **b, t_list **a);
+
+//rotate functions
+void	ra(t_list **a);
+void	rb(t_list **b);
+void	rr(t_list **a, t_list **b);
+
+//reverse rotate functions
+void	reverse_rotate(t_list **lst);
 
 //lists functions
 void	ft_lstadd_front(t_list **lst, t_list *new);

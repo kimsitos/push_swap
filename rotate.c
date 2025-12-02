@@ -1,37 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   rotate.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: stcozaci <stcozaci@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/26 11:57:36 by stcozaci          #+#    #+#             */
-/*   Updated: 2025/12/02 16:59:46 by stcozaci         ###   ########.fr       */
+/*   Created: 2025/12/02 16:21:24 by stcozaci          #+#    #+#             */
+/*   Updated: 2025/12/02 16:57:02 by stcozaci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	main(int argn, char **argv)
+static void	rotate(t_list **lst)
 {
-	if (!argn)
-		return (0);
-	t_list *a = NULL;
-	t_list *b = parse(argv);
-	ft_printf("LIST A\n");
-	print_list(a);
-	// ft_printf("\nLIST B\n");
-	// print_list(b);
-	
-	//the cange is made
-	reverse_rotate(&a);
-	ft_printf("\n==ROTATE MADE==\n");
-	
-	//printing list
-	ft_printf("LIST A\n");
-	print_list(a);
-	// ft_printf("\nLIST B\n");
-	print_list(b);
-	ft_lstclear(&a);
-	return (0);
+	t_list	*temp;
+
+	if (!*lst)
+		return ;
+	temp = *lst;
+	*lst = (*lst)->next;
+	temp->next = NULL;
+	ft_lstadd_back(lst, temp);
+}
+
+void	ra(t_list **a)
+{
+	rotate(a);
+	ft_printf("ra\n");
+}
+
+void	rb(t_list **b)
+{
+	rotate(b);
+	ft_printf("rb\n");
+}
+
+void	rr(t_list **a, t_list **b)
+{
+	rotate(a);
+	rotate(b);
+	ft_printf("rr");
 }
