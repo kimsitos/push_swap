@@ -6,7 +6,7 @@
 /*   By: stcozaci <stcozaci@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/21 14:46:08 by stcozaci          #+#    #+#             */
-/*   Updated: 2025/12/02 16:59:41 by stcozaci         ###   ########.fr       */
+/*   Updated: 2025/12/02 18:40:30 by stcozaci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,8 +40,9 @@ void	rb(t_list **b);
 void	rr(t_list **a, t_list **b);
 
 //reverse rotate functions
-void	reverse_rotate(t_list **lst);
-
+void	rra(t_list **a);
+void	rrb(t_list **b);
+void	rrr(t_list **a, t_list **b);
 //lists functions
 void	ft_lstadd_front(t_list **lst, t_list *new);
 void	ft_lstclear(t_list **lst);
