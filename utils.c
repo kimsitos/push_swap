@@ -6,7 +6,7 @@
 /*   By: stcozaci <stcozaci@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/01 10:39:13 by stcozaci          #+#    #+#             */
-/*   Updated: 2025/12/01 13:21:37 by stcozaci         ###   ########.fr       */
+/*   Updated: 2025/12/02 16:14:05 by stcozaci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,17 +26,5 @@ int	order(t_list *lst)
 	return (1);
 }
 
-void	s(t_list **lst)
-{
-	t_list	*temp_first;
-	t_list	*temp_second;
 
-	temp_first = *lst;
-	ft_printf(".\n");
-	temp_second = (*lst)->next;
-	ft_printf(":\n");
-	temp->next = (*lst)->next;
-	ft_printf("?\n");
-	(*lst)->next = temp;
-	ft_printf("swaped i think\n");
-}
+

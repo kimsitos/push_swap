@@ -1,38 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   push.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: stcozaci <stcozaci@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/26 11:57:36 by stcozaci          #+#    #+#             */
-/*   Updated: 2025/12/02 16:12:54 by stcozaci         ###   ########.fr       */
+/*   Created: 2025/12/02 15:48:20 by stcozaci          #+#    #+#             */
+/*   Updated: 2025/12/02 16:13:29 by stcozaci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	main(int argn, char **argv)
+static void	p(t_list **take, t_list **to_push)
 {
-	if (!argn)
-		return (0);
-	t_list *a = parse(argv);
-	t_list *b = NULL;
-	ft_printf("LIST A\n");
-	print_list(a);
-	ft_printf("LIST B\n");
-	print_list(b);
-	
-	//the cange is made
-	pa(&a, &b);
-	pa(&a, &b);
-	ft_printf("\n==PUSH MADE==\n");
-	
-	//printing list
-	ft_printf("LIST A\n");
-	print_list(a);
-	ft_printf("LIST B\n");
-	print_list(b);
-	ft_lstclear(&a);
-	return (0);
+	t_list	*temp;
+
+	if (!*take)
+		return ;
+	temp = *take;
+	*take = (*take)->next;
+	ft_lstadd_front(to_push, temp);
+}
+
+void	pa(t_list **a, t_list **b)
+{
+	p(a, b);
+	ft_printf("pa\n");
+}
+
+void	pb(t_list **b, t_list **a)
+{
+	p(a, b);
+	ft_printf("pb\n");
 }
