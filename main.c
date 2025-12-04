@@ -6,7 +6,7 @@
 /*   By: stcozaci <stcozaci@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/26 11:57:36 by stcozaci          #+#    #+#             */
-/*   Updated: 2025/12/02 18:47:26 by stcozaci         ###   ########.fr       */
+/*   Updated: 2025/12/04 13:14:25 by stcozaci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,25 +14,20 @@
 
 int	main(int argn, char **argv)
 {
-	if (!argn)
-		return (0);
+	if (argn <= 1)
+		exit (1);
 	t_list *a = parse(argv);
 	t_list *b = NULL;
-	ft_printf("LIST A\n");
-	print_list(a);
-	ft_printf("\nLIST B\n");
-	print_list(b);
-	
-	//the cange is made
-	ra(&a);
-	rra(&a);
-	ft_printf("\n==ROTATE MADE==\n");
+	int	length = ft_lstsize(a);
+	if (length <= 2)
+		sort_two(&a);
+	else if(length == 3)
+		sort_three(&a);
+	else if (length <= 5)
+		sort_five(&a, &b);
 	
 	//printing list
-	ft_printf("LIST A\n");
-	print_list(a);
-	ft_printf("\nLIST B\n");
-	print_list(b);
+	// print_list_lite(a);
 	ft_lstclear(&b);
 	ft_lstclear(&a);
 	return (0);

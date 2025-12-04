@@ -1,37 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   debug.c                                            :+:      :+:    :+:   */
+/*   rotate.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: stcozaci <stcozaci@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/28 15:26:43 by stcozaci          #+#    #+#             */
-/*   Updated: 2025/12/04 11:37:28 by stcozaci         ###   ########.fr       */
+/*   Created: 2025/12/02 16:21:24 by stcozaci          #+#    #+#             */
+/*   Updated: 2025/12/04 10:55:56 by stcozaci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
-#include <stdio.h>
+#include "../push_swap.h"
 
-void	print_list(t_list *lst)
+static void	rotate(t_list **lst)
 {
-	printf("==LIST==\n");
-	while (lst)
-	{
-		printf("Pointer number %p\n", (void *)lst);
-		printf("Content number %d\n", lst->content);
-		printf("-------------------------------\n");
-		lst = lst->next;
-	}
+	t_list	*temp;
+
+	if (!*lst)
+		return ;
+	temp = *lst;
+	*lst = (*lst)->next;
+	temp->next = NULL;
+	ft_lstadd_back(lst, temp);
 }
 
-void	print_list_lite(t_list *lst)
+void	ra(t_list **a)
 {
-	printf("LST:");
-	while (lst)
-	{
-		printf(" %d", lst->content);
-		lst = lst->next;
-	}
-	printf("\n");
+	rotate(a);
+	ft_printf("ra\n");
+}
+
+void	rb(t_list **b)
+{
+	rotate(b);
+	ft_printf("rb\n");
+}
+
+void	rr(t_list **a, t_list **b)
+{
+	rotate(a);
+	rotate(b);
+	ft_printf("rr");
 }

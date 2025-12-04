@@ -6,7 +6,7 @@
 /*   By: stcozaci <stcozaci@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/28 10:29:46 by stcozaci          #+#    #+#             */
-/*   Updated: 2025/12/01 10:18:35 by stcozaci         ###   ########.fr       */
+/*   Updated: 2025/12/04 13:04:41 by stcozaci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,8 @@ static int	is_number(char *number)
 	i = 0;
 	if (number[i] == '-' || number[i] == '+')
 		i++;
+	if (!number[i])
+		return (0);
 	while (number[i])
 	{
 		if (!(number[i] >= '0' && number[i] <= '9'))
@@ -92,7 +94,7 @@ t_list	*parse(char **argv)
 	if (repeated(numbers))
 	{
 		ft_lstclear(&numbers);
-		ft_printf("numbers repeated");
+		ft_printf("Error\n");
 		exit (1);
 	}
 	return (numbers);

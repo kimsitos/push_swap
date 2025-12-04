@@ -6,11 +6,11 @@
 /*   By: stcozaci <stcozaci@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/02 15:48:20 by stcozaci          #+#    #+#             */
-/*   Updated: 2025/12/02 16:13:29 by stcozaci         ###   ########.fr       */
+/*   Updated: 2025/12/04 10:55:47 by stcozaci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 static void	p(t_list **take, t_list **to_push)
 {
@@ -25,7 +25,7 @@ static void	p(t_list **take, t_list **to_push)
 
 void	pa(t_list **a, t_list **b)
 {
-	p(a, b);
+	p(b, a);
 	ft_printf("pa\n");
 }
 

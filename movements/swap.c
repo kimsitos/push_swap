@@ -1,37 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   debug.c                                            :+:      :+:    :+:   */
+/*   swap.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: stcozaci <stcozaci@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/28 15:26:43 by stcozaci          #+#    #+#             */
-/*   Updated: 2025/12/04 11:37:28 by stcozaci         ###   ########.fr       */
+/*   Created: 2025/12/02 15:05:20 by stcozaci          #+#    #+#             */
+/*   Updated: 2025/12/04 10:55:59 by stcozaci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
-#include <stdio.h>
+#include "../push_swap.h"
 
-void	print_list(t_list *lst)
+static void	s(t_list **lst)
 {
-	printf("==LIST==\n");
-	while (lst)
-	{
-		printf("Pointer number %p\n", (void *)lst);
-		printf("Content number %d\n", lst->content);
-		printf("-------------------------------\n");
-		lst = lst->next;
-	}
+	t_list	*temp;
+
+	if (ft_lstsize(*lst) <= 1)
+		return ;
+	temp = *lst;
+	*lst = (*lst)->next;
+	temp->next = (*lst)->next;
+	(*lst)->next = temp;
 }
 
-void	print_list_lite(t_list *lst)
+void	sa(t_list **lst)
 {
-	printf("LST:");
-	while (lst)
-	{
-		printf(" %d", lst->content);
-		lst = lst->next;
-	}
-	printf("\n");
+	s(lst);
+	ft_printf("sa\n");
+}
+
+void	sb(t_list **lst)
+{
+	s(lst);
+	ft_printf("sb\n");
+}
+
+void	ss(t_list **a, t_list **b)
+{
+	s(a);
+	s(b);
+	ft_printf("ss\n");
 }
