@@ -6,7 +6,7 @@
 /*   By: stcozaci <stcozaci@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/28 15:26:43 by stcozaci          #+#    #+#             */
-/*   Updated: 2025/12/04 11:37:28 by stcozaci         ###   ########.fr       */
+/*   Updated: 2025/12/04 17:56:18 by stcozaci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,14 @@
 
 void	print_list(t_list *lst)
 {
-	printf("==LIST==\n");
+	printf("\n==LIST==\n");
 	while (lst)
 	{
-		printf("Pointer number %p\n", (void *)lst);
-		printf("Content number %d\n", lst->content);
+		printf("Pointer number              %p\n", (void *)lst);
+		printf("Content number              %d\n", lst->content);
+		printf("Target number               %d\n", lst->target);
+		printf("Cost to be on top:          %d\n", lst->cost_top);
+		printf("Cost to target be on top:   %d\n", lst->cost_target_top);
 		printf("-------------------------------\n");
 		lst = lst->next;
 	}

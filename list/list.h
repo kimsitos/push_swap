@@ -6,7 +6,7 @@
 /*   By: stcozaci <stcozaci@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/04 15:35:24 by stcozaci          #+#    #+#             */
-/*   Updated: 2025/12/04 15:39:40 by stcozaci         ###   ########.fr       */
+/*   Updated: 2025/12/04 17:09:27 by stcozaci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,9 @@
 typedef struct s_list
 {
 	int				content;
+	int				target;
+	int				cost_top;
+	int				cost_target_top;
 	struct s_list	*next;
 }	t_list;
 
