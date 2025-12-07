@@ -6,7 +6,7 @@
 /*   By: stcozaci <stcozaci@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/07 18:08:35 by stcozaci          #+#    #+#             */
-/*   Updated: 2025/12/07 20:06:23 by stcozaci         ###   ########.fr       */
+/*   Updated: 2025/12/07 20:33:11 by stcozaci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void	move_a_top(t_list **a, t_list *low_mov)
 
 void	move_b_top(t_list **b, t_list *low_mov)
 {
-	if (low_mov->below_median == 0)
+	if (low_mov->below_median == 1)
 	{
 		while (low_mov->cost_top)
 		{
