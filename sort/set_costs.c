@@ -6,31 +6,29 @@
 /*   By: stcozaci <stcozaci@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/07 17:11:03 by stcozaci          #+#    #+#             */
-/*   Updated: 2025/12/07 17:19:30 by stcozaci         ###   ########.fr       */
+/*   Updated: 2025/12/07 19:27:11 by stcozaci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	set_costs(t_list **lst)
+void	set_costs(t_list *lst)
 {
-	t_list	*temp;
 	int		lstsize;
 	int		index;
 
-	temp = *lst;
-	lstsize = ft_lstsize(*lst);
+	lstsize = ft_lstsize(lst);
 	index = 0;
-	while (temp)
+	while (lst)
 	{
 		if (index <= lstsize / 2)
-			temp->cost_top = index;
+			lst->cost_top = index;
 		else
 		{
-			temp->cost_top = lstsize - index;
-			temp->below_median = 1;
+			lst->cost_top = lstsize - index;
+			lst->below_median = 1;
 		}
-		temp = temp->next;
+		lst = lst->next;
 		index++;
 	}
 }
@@ -46,6 +44,7 @@ int	get_target(t_list *a, t_list *b)
 			target = a->content;
 		a = a->next;
 	}
+	ft_printf("target for %d is %d\n", b->content, target);
 	return (target);
 }
 
@@ -67,13 +66,15 @@ void	set_target_cost(t_list *a, t_list **b)
 			index++;
 			save = save->next;
 		}
+		ft_printf("%d is in position %d\n", target, index);
 		if (index <= ft_lstsize(a) / 2)
 			temp->target_cost_top = index;
 		else
 		{
 			temp->target_cost_top = ft_lstsize(a) - index;
-			temp->target_avobe_median = 1;
+			temp->target_below_median = 1;
 		}
+		ft_printf("the target cost is %d", temp->target_cost_top);
 		temp = temp->next;
 	}
 }

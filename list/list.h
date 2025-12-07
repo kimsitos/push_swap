@@ -6,7 +6,7 @@
 /*   By: stcozaci <stcozaci@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/04 15:35:24 by stcozaci          #+#    #+#             */
-/*   Updated: 2025/12/07 16:43:02 by stcozaci         ###   ########.fr       */
+/*   Updated: 2025/12/07 19:20:11 by stcozaci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ typedef struct s_list
 	int				cost_top;
 	int				below_median;
 	int				target_cost_top;
-	int				target_avobe_median;
+	int				target_below_median;
 	int				total_cost;
 	struct s_list	*next;
 }	t_list;
