@@ -6,23 +6,11 @@
 /*   By: stcozaci <stcozaci@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/05 14:59:20 by stcozaci          #+#    #+#             */
-/*   Updated: 2025/12/07 15:41:12 by stcozaci         ###   ########.fr       */
+/*   Updated: 2025/12/07 17:20:29 by stcozaci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
-
-void	update_list(t_list **a, t_list **b)
-{
-	t_list	*temp_b;
-
-	temp_b = *b;
-	while (temp_b)
-	{
-		
-	}
-	
-}
 
 void	turk_algorithm(t_list **a, t_list **b)
 {
@@ -35,8 +23,7 @@ void	turk_algorithm(t_list **a, t_list **b)
 			ra(a);
 		pb(b, a);
 	}
-	while (*b)
-	{
-		
-	}
+	set_costs(b);
+	set_target_cost(*a, b);
+	set_total_cost(b);
 }
