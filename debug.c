@@ -6,7 +6,7 @@
 /*   By: stcozaci <stcozaci@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/28 15:26:43 by stcozaci          #+#    #+#             */
-/*   Updated: 2025/12/07 17:30:19 by stcozaci         ###   ########.fr       */
+/*   Updated: 2025/12/07 19:13:12 by stcozaci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ void	print_list(t_list *lst)
 		printf("Pointer number              %p\n", (void *)lst);
 		printf("Content number              %d\n", lst->content);
 		printf("Cost to be on top:          %d\n", lst->cost_top);
+		printf("Target cost to be on top    %d\n", lst->target_cost_top);
+		printf("Total costs                 %d\n", lst->total_cost);
 		printf("-------------------------------\n");
 		lst = lst->next;
 	}
