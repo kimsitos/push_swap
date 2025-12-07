@@ -6,7 +6,7 @@
 /*   By: stcozaci <stcozaci@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/27 15:18:36 by stcozaci          #+#    #+#             */
-/*   Updated: 2025/12/04 16:12:36 by stcozaci         ###   ########.fr       */
+/*   Updated: 2025/12/07 19:44:42 by stcozaci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,4 +19,3 @@ void	ft_lstdelone(t_list *lst)
 		free(lst);
 	}
 }
-

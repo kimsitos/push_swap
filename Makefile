@@ -7,7 +7,7 @@ CFLAGS = -Wall -Werror -Wextra
 LIB = libft/libft.a
 
 SRC = main.c checker.c debug.c utils.c movements/swap.c movements/push.c movements/rotate.c\
-movements/reverse_rotate.c sort/sort_small.c sort/turk.c sort/set_costs.c
+movements/reverse_rotate.c sort/sort_small.c sort/turk.c sort/set_costs.c sort/do_moves.c
 
 SRCLIST = list/ft_lstnew.c list/ft_lstadd_front.c list/ft_lstsize.c\
 list/ft_lstlast.c list/ft_lstadd_back.c list/ft_lstdelone.c list/ft_lstclear.c list/ft_lstiter.c

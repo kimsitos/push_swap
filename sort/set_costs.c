@@ -6,7 +6,7 @@
 /*   By: stcozaci <stcozaci@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/07 17:11:03 by stcozaci          #+#    #+#             */
-/*   Updated: 2025/12/07 19:27:11 by stcozaci         ###   ########.fr       */
+/*   Updated: 2025/12/07 19:32:17 by stcozaci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,6 @@ int	get_target(t_list *a, t_list *b)
 			target = a->content;
 		a = a->next;
 	}
-	ft_printf("target for %d is %d\n", b->content, target);
 	return (target);
 }
 
@@ -66,7 +65,6 @@ void	set_target_cost(t_list *a, t_list **b)
 			index++;
 			save = save->next;
 		}
-		ft_printf("%d is in position %d\n", target, index);
 		if (index <= ft_lstsize(a) / 2)
 			temp->target_cost_top = index;
 		else
@@ -74,7 +72,6 @@ void	set_target_cost(t_list *a, t_list **b)
 			temp->target_cost_top = ft_lstsize(a) - index;
 			temp->target_below_median = 1;
 		}
-		ft_printf("the target cost is %d", temp->target_cost_top);
 		temp = temp->next;
 	}
 }

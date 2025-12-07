@@ -6,7 +6,7 @@
 /*   By: stcozaci <stcozaci@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/01 10:39:13 by stcozaci          #+#    #+#             */
-/*   Updated: 2025/12/07 15:13:51 by stcozaci         ###   ########.fr       */
+/*   Updated: 2025/12/07 19:46:14 by stcozaci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,5 +39,3 @@ int	get_biggest(t_list *lst)
 	}
 	return (biggest);
 }
-
-

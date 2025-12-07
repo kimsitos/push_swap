@@ -6,7 +6,7 @@
 /*   By: stcozaci <stcozaci@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/21 14:46:08 by stcozaci          #+#    #+#             */
-/*   Updated: 2025/12/07 17:20:12 by stcozaci         ###   ########.fr       */
+/*   Updated: 2025/12/07 19:48:13 by stcozaci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,11 @@
 t_list	*parse(char **argv);
 int		order(t_list *lst);
 int		get_biggest(t_list *lst);
-void	set_costs(t_list **lst);
+void	set_costs(t_list *lst);
 int		get_target(t_list *a, t_list *b);
 void	set_target_cost(t_list *a, t_list **b);
 void	set_total_cost(t_list **b);
+void	move_to_push(t_list **a, t_list **b, t_list *low_mov);
 
 //sort
 void	sort_two(t_list **lst);

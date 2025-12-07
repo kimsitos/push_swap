@@ -6,7 +6,7 @@
 /*   By: stcozaci <stcozaci@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/26 11:57:36 by stcozaci          #+#    #+#             */
-/*   Updated: 2025/12/07 19:13:35 by stcozaci         ###   ########.fr       */
+/*   Updated: 2025/12/07 20:03:50 by stcozaci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,6 @@ int	main(int argn, char **argv)
 		sort_three(&a);
 	else if (numbers_to_order >= 3)
 		turk_algorithm(&a, &b);
-	print_list(a);
-	print_list(b);
 	ft_lstclear(&b);
 	ft_lstclear(&a);
 	return (0);
