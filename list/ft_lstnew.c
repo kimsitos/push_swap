@@ -6,7 +6,7 @@
 /*   By: stcozaci <stcozaci@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/26 18:56:37 by stcozaci          #+#    #+#             */
-/*   Updated: 2025/12/05 11:36:19 by stcozaci         ###   ########.fr       */
+/*   Updated: 2025/12/07 15:04:47 by stcozaci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ t_list	*ft_lstnew(int content)
 	if (!node)
 		return (0);
 	node->content = content;
+	node->next = NULL;
 	return (node);
 }
 
