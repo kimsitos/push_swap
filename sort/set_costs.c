@@ -6,7 +6,7 @@
 /*   By: stcozaci <stcozaci@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/07 17:11:03 by stcozaci          #+#    #+#             */
-/*   Updated: 2025/12/08 10:43:59 by stcozaci         ###   ########.fr       */
+/*   Updated: 2025/12/08 11:31:07 by stcozaci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,7 +85,15 @@ void	set_total_cost(t_list **b)
 	temp = *b;
 	while (temp)
 	{
-		temp->total_cost = temp->cost_top + temp->target_cost_top;
+		if (temp->below_median == temp->target_below_median)
+		{
+			if (temp->target_cost_top > temp->cost_top)
+				temp->total_cost = temp->target_cost_top;
+			else
+				temp->total_cost = temp->cost_top;
+		}
+		else
+			temp->total_cost = temp->cost_top + temp->target_cost_top;
 		temp = temp->next;
 	}
 }
