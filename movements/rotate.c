@@ -6,7 +6,7 @@
 /*   By: stcozaci <stcozaci@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/02 16:21:24 by stcozaci          #+#    #+#             */
-/*   Updated: 2025/12/04 10:55:56 by stcozaci         ###   ########.fr       */
+/*   Updated: 2025/12/08 09:59:47 by stcozaci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,5 +40,5 @@ void	rr(t_list **a, t_list **b)
 {
 	rotate(a);
 	rotate(b);
-	ft_printf("rr");
+	ft_printf("rr\n");
 }

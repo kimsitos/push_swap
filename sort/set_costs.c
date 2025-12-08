@@ -6,7 +6,7 @@
 /*   By: stcozaci <stcozaci@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/07 17:11:03 by stcozaci          #+#    #+#             */
-/*   Updated: 2025/12/07 20:20:30 by stcozaci         ###   ########.fr       */
+/*   Updated: 2025/12/08 10:43:59 by stcozaci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,10 @@ void	set_costs(t_list *lst)
 	while (lst)
 	{
 		if (index <= lstsize / 2)
+		{
 			lst->cost_top = index;
+			lst->below_median = 0;
+		}
 		else
 		{
 			lst->cost_top = lstsize - index;
@@ -47,32 +50,31 @@ int	get_target(t_list *a, t_list *b)
 	return (target);
 }
 
-void	set_target_cost(t_list *a, t_list **b)
+void	set_target_cost(t_list *a, t_list *b)
 {
-	t_list	*temp;
 	t_list	*save;
-	int		target;
 	int		index;
 
-	temp = *b;
-	while (temp)
+	while (b)
 	{
 		save = a;
-		target = get_target(a, temp);
 		index = 0;
-		while (save->content != target)
+		while (save->content != get_target(a, b))
 		{
 			index++;
 			save = save->next;
 		}
 		if (index <= ft_lstsize(a) / 2)
-			temp->target_cost_top = index;
+		{
+			b->target_cost_top = index;
+			b->target_below_median = 0;
+		}
 		else
 		{
-			temp->target_cost_top = ft_lstsize(a) - index;
-			temp->target_below_median = 1;
+			b->target_cost_top = ft_lstsize(a) - index;
+			b->target_below_median = 1;
 		}
-		temp = temp->next;
+		b = b->next;
 	}
 }
 

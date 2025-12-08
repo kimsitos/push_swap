@@ -6,7 +6,7 @@
 /*   By: stcozaci <stcozaci@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/05 14:59:20 by stcozaci          #+#    #+#             */
-/*   Updated: 2025/12/07 20:13:45 by stcozaci         ###   ########.fr       */
+/*   Updated: 2025/12/08 09:48:43 by stcozaci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ void	turk_algorithm(t_list **a, t_list **b)
 	while (*b)
 	{
 		set_costs(*b);
-		set_target_cost(*a, b);
+		set_target_cost(*a, *b);
 		set_total_cost(b);
 		low_mov = select_lowest_moves(*b);
 		move_to_push(a, b, low_mov);
