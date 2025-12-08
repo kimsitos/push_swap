@@ -18,4 +18,15 @@ The first element becomes the last one.
 - **rrb** (reverse rotate b): Shift down all elements of stack b by 1. The last element becomes the first one.
 - **rrr** : rra and rrb at the same time.
 
+
+
 # Instructions
+
+- **make**: compile for make the push_swap.
+- **make clean**: delete the .o files.
+- **make fclean**: ejecute make clean and delete the program.
+- **make re**: execute make fclean and compile all the program.
+- **./push_swap <numbers>**: it will execute the push_swap program taking the arguments as numbers. 
+It only accepts numbers. Any other character will result in an error. If any nummber is repeated or it's bigger then the int limits it will also result in an error.
+
+You can run the comman
