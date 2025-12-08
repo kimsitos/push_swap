@@ -6,7 +6,7 @@
 /*   By: stcozaci <stcozaci@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/01 10:39:13 by stcozaci          #+#    #+#             */
-/*   Updated: 2025/12/07 19:46:14 by stcozaci         ###   ########.fr       */
+/*   Updated: 2025/12/09 00:17:31 by stcozaci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,4 +38,18 @@ int	get_biggest(t_list *lst)
 		lst = lst->next;
 	}
 	return (biggest);
+}
+
+t_list	*get_smallest(t_list *lst)
+{
+	t_list	*smallest;
+
+	smallest = lst;
+	while (lst)
+	{
+		if (lst->content < smallest->content)
+			smallest = lst;
+		lst = lst->next;
+	}
+	return (smallest);
 }

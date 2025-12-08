@@ -6,7 +6,7 @@
 /*   By: stcozaci <stcozaci@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/05 14:59:20 by stcozaci          #+#    #+#             */
-/*   Updated: 2025/12/08 09:48:43 by stcozaci         ###   ########.fr       */
+/*   Updated: 2025/12/09 00:21:46 by stcozaci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,20 @@ t_list	*select_lowest_moves(t_list *b)
 		b = b->next;
 	}
 	return (lowest);
+}
+
+void	final_moves(t_list **a, t_list *smallest)
+{
+	while (smallest->below_median == 0 && smallest->cost_top)
+	{
+		ra(a);
+		smallest->cost_top--;
+	}
+	while (smallest->below_median == 1 && smallest->cost_top)
+	{
+		rra(a);
+		smallest->cost_top--;
+	}
 }
 
 void	turk_algorithm(t_list **a, t_list **b)
@@ -47,6 +61,6 @@ void	turk_algorithm(t_list **a, t_list **b)
 		low_mov = select_lowest_moves(*b);
 		move_to_push(a, b, low_mov);
 	}
-	while (ft_lstlast(*a)->content != get_biggest(*a))
-		ra(a);
+	set_costs(*a);
+	final_moves(a, get_smallest(*a));
 }
