@@ -1,8 +1,9 @@
 *This project has been created as part of the 42 curriculum by stcozaci*
 
-#Description
+# Description
 
 In this proyect we will sort numbers using 2 stacks (stack a and b) and a limited set of instructions, trying to achieve the lowest possible number of actions.
+
 The movements that we can use are the next ones:
 - **sa** (swap a): Swap the first 2 elements at the top of stack a. Do nothing if there is only one element or none.
 - **sb** (swap b): Swap the first 2 elements at the top of stack b. Do nothing if there is only one element or none.
@@ -17,4 +18,4 @@ The first element becomes the last one.
 - **rrb** (reverse rotate b): Shift down all elements of stack b by 1. The last element becomes the first one.
 - **rrr** : rra and rrb at the same time.
 
-#
+# Instructions
