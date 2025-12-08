@@ -6,7 +6,7 @@
 /*   By: stcozaci <stcozaci@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/21 14:46:08 by stcozaci          #+#    #+#             */
-/*   Updated: 2025/12/08 09:47:33 by stcozaci         ###   ########.fr       */
+/*   Updated: 2025/12/08 12:07:21 by stcozaci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,4 @@ void	move_to_push(t_list **a, t_list **b, t_list *low_mov);
 void	sort_two(t_list **lst);
 void	sort_three(t_list **lst);
 void	turk_algorithm(t_list **a, t_list **b);
-
-//debuging
-void	print_list(t_list *lst);
-void	print_list_lite(t_list *lst);
 #endif

@@ -6,7 +6,7 @@
 /*   By: stcozaci <stcozaci@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/27 15:18:36 by stcozaci          #+#    #+#             */
-/*   Updated: 2025/11/27 15:52:50 by stcozaci         ###   ########.fr       */
+/*   Updated: 2025/12/08 12:08:00 by stcozaci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,12 +20,3 @@ void	ft_lstdelone(t_list *lst, void (*del)(void *))
 		free(lst);
 	}
 }
-// #include <stdio.h>
-// int	main(void)
-// {
-// 	t_list *h = ft_lstnew(ft_strdup("THREE"));
-// 	printf("Content before: %s\n", (char *) h->content);
-// 	ft_lstdelone(h, free);
-// 	printf("Content after: %s\n", (char *) h->content);
-// 	return (0);
-// }

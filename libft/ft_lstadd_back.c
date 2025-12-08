@@ -6,7 +6,7 @@
 /*   By: stcozaci <stcozaci@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/27 13:27:05 by stcozaci          #+#    #+#             */
-/*   Updated: 2025/11/27 15:02:04 by stcozaci         ###   ########.fr       */
+/*   Updated: 2025/12/08 12:07:41 by stcozaci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,16 +24,3 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 	}
 	temp->next = new;
 }
-
-// #include <stdio.h>
-
-// int	main()
-// {
-// 	t_list *list = NULL;
-// 	t_list *temp = ft_lstlast(list);
-
-// 	ft_lstadd_back(&list, ft_lstnew("something"));
-// 	temp = ft_lstlast(list);
-// 	printf("\nBEFORE LIST ULTIMO NODO:  %s\n", (char *)temp->content);
-// 	return 0;
-// }

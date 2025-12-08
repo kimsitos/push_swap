@@ -6,7 +6,7 @@
 /*   By: stcozaci <stcozaci@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/05 11:37:24 by stcozaci          #+#    #+#             */
-/*   Updated: 2025/12/05 13:31:05 by stcozaci         ###   ########.fr       */
+/*   Updated: 2025/12/08 11:52:59 by stcozaci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,9 +38,3 @@ void	sort_three(t_list **lst)
 		ra(lst);
 	}
 }
-// Case 1: [1,2,3] → No action needed
-// Case 2: [2,1,3] → sa 
-// Case 3: [2,3,1] → rra
-// Case 4: [3,1,2] → ra
-// Case 5: [3,2,1] → sa + rra
-// Case 6: [1,3,2] → sa + ra

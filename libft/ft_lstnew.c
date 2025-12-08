@@ -6,7 +6,7 @@
 /*   By: stcozaci <stcozaci@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/26 18:56:37 by stcozaci          #+#    #+#             */
-/*   Updated: 2025/11/28 17:21:03 by stcozaci         ###   ########.fr       */
+/*   Updated: 2025/12/08 12:08:17 by stcozaci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,16 +23,3 @@ t_list	*ft_lstnew(int content)
 	node->next = NULL;
 	return (node);
 }
-
-// #include <stdio.h>
-
-// int main(void)
-// {
-// 	t_list *test;
-
-// 	test = ft_lstnew("hello world");
-// 	printf("%s\n", (char *)test->content);
-// 	if(test->next == NULL)
-// 		printf("Yes null\n");
-// 	return (0);
-// }
