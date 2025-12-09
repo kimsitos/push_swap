@@ -6,7 +6,7 @@
 /*   By: stcozaci <stcozaci@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/08 11:53:43 by stcozaci          #+#    #+#             */
-/*   Updated: 2025/12/09 04:39:13 by stcozaci         ###   ########.fr       */
+/*   Updated: 2025/12/09 13:07:10 by stcozaci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int	main(int argn, char **argv)
 	char	*mov;
 
 	if (argn <= 1)
-		exit (1);
+		exit (0);
 	a = parse(argv);
 	b = NULL;
 	mov = get_next_line(0);
@@ -37,6 +37,7 @@ int	main(int argn, char **argv)
 		case_push(mov, &a, &b);
 		case_rotate(mov, &a, &b);
 		case_reverse_rotate(mov, &a, &b);
+		free(mov);
 		mov = get_next_line(0);
 	}
 	if (b != NULL || !order(a))
