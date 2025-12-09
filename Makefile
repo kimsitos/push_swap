@@ -6,11 +6,11 @@ CFLAGS = -Wall -Werror -Wextra
 
 LIB = libft/libft.a
 
-SRC = main.c parse.c utils.c movements/swap.c movements/push.c movements/rotate.c\
-movements/reverse_rotate.c sort/sort_small.c sort/turk.c sort/set_costs.c sort/do_moves.c
+MOV = movements/movements.a
 
-SRCLIST = list/ft_lstnew.c list/ft_lstadd_front.c list/ft_lstsize.c\
-list/ft_lstlast.c list/ft_lstadd_back.c list/ft_lstdelone.c list/ft_lstclear.c list/ft_lstiter.c
+LST = list/list.a
+
+SRC = main.c parse.c utils.c sort/sort_small.c sort/turk.c sort/set_costs.c sort/move_to_top.c
 
 RM = rm -f
 
@@ -23,21 +23,31 @@ MAKELIB = make -C libft
 all: $(NAME)
 
 $(LIB): libft/Makefile
-	$(MAKELIB) all
+	make -C libft all
 
-$(NAME): $(OBJ) $(LIB) $(OBJLST)
-	$(CC) $(CFLAGS) $(OBJ) $(OBJLST) $(LIB) -o $(NAME)
+$(MOV): movements/Makefile
+	make -C movements all
+
+$(LST): list/Makefile
+	make -C list all
+
+$(NAME): $(OBJ) $(LIB) $(MOV) $(LST)
+	$(CC) $(CFLAGS) $(OBJ) $(LIB) $(MOV) $(LST) -o $(NAME)
 
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean: 
 	$(RM) $(OBJ) $(OBJLST)
-	$(MAKELIB) clean
+	make -C libft clean
+	make -C movements clean
+	make -C list clean
 
 fclean: clean
 	$(RM) $(NAME)
-	$(MAKELIB) fclean
+	make -C libft fclean
+	make -C movements fclean
+	make -C list fclean
 
 re: fclean all
 

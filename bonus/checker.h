@@ -1,28 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstsize.c                                       :+:      :+:    :+:   */
+/*   checker.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: stcozaci <stcozaci@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/27 12:25:13 by stcozaci          #+#    #+#             */
-/*   Updated: 2025/12/08 12:08:22 by stcozaci         ###   ########.fr       */
+/*   Created: 2025/12/09 00:43:36 by stcozaci          #+#    #+#             */
+/*   Updated: 2025/12/09 00:46:02 by stcozaci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#ifndef CHECKER_H
+# define CHECKER_H
+# include "../libft/libft.h"
+# include "../movements/movements.h"
+# include "../list/list.h"
 
-int	ft_lstsize(t_list *lst)
-{
-	t_list	*temp;
-	int		i;
-
-	i = 0;
-	temp = lst;
-	while (temp)
-	{
-		temp = temp->next;
-		i++;
-	}
-	return (i);
-}
+t_list	*parse(char **argv);
+int		order(t_list *lst);
