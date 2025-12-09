@@ -6,13 +6,13 @@
 /*   By: stcozaci <stcozaci@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/02 16:52:59 by stcozaci          #+#    #+#             */
-/*   Updated: 2025/12/04 10:55:52 by stcozaci         ###   ########.fr       */
+/*   Updated: 2025/12/09 02:53:38 by stcozaci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-static void	reverse_rotate(t_list **lst)
+void	reverse_rotate(t_list **lst)
 {
 	t_list	*last;
 	t_list	*penultimate;

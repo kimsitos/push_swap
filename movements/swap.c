@@ -6,13 +6,13 @@
 /*   By: stcozaci <stcozaci@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/02 15:05:20 by stcozaci          #+#    #+#             */
-/*   Updated: 2025/12/04 10:55:59 by stcozaci         ###   ########.fr       */
+/*   Updated: 2025/12/09 03:31:03 by stcozaci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-static void	s(t_list **lst)
+void	swap(t_list **lst)
 {
 	t_list	*temp;
 
@@ -26,19 +26,19 @@ static void	s(t_list **lst)
 
 void	sa(t_list **lst)
 {
-	s(lst);
+	swap(lst);
 	ft_printf("sa\n");
 }
 
 void	sb(t_list **lst)
 {
-	s(lst);
+	swap(lst);
 	ft_printf("sb\n");
 }
 
 void	ss(t_list **a, t_list **b)
 {
-	s(a);
-	s(b);
+	swap(a);
+	swap(b);
 	ft_printf("ss\n");
 }

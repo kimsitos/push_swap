@@ -1,32 +1,42 @@
-NAME = checker
+NAME = ../checker
 
 LIB = ../libft/libft.a
 
-SRC = main.c ../utils.c 
+MOV = ../movements/movements.a
 
-SRCLIST = ../list/ft_lstnew.c ../list/ft_lstadd_front.c ../list/ft_lstsize.c\
-../list/ft_lstlast.c ../list/ft_lstadd_back.c ../list/ft_lstdelone.c ../list/ft_lstclear.c ../list/ft_lstiter.c
+LST = ../list/list.a
+
+SRC = main.c case_movements.c ../utils.c ../parse.c
 
 OBJ = $(SRC:.c=.o)
 
 OBJLST = $(SRCLIST:.c=.o)
 
-MAKELIB = make -C ../libft
-
-$(LIB): ../libft/Makefile
-	$(MAKELIB) all
 all : $(NAME)
 
-$(NAME): $(OBJ) $(OBJLST) $(LIB)
-	cc -Wall -Werror -Wextra $(OBJ) $(OBJLST) $(LIB) -o $(NAME)
+$(LIB): ../libft/Makefile
+	make -C ../libft all
+
+$(MOV): ../movements/Makefile
+	make -C ../movements all
+
+$(LST): ../list/Makefile
+	make -C ../list all
+
+$(NAME): $(OBJ) $(LIB) $(MOV) $(LST)
+	cc -Wall -Werror -Wextra $(OBJ) $(LIB) $(MOV) $(LST) -o $(NAME)
 
 clean: 
 	$(RM) $(OBJ) $(OBJLST)
-	$(MAKELIB) clean
+	make -C ../libft clean
+	make -C ../movements clean
+	make -C ../list clean
 
 fclean: clean
 	$(RM) $(NAME)
-	$(MAKELIB) fclean
+	make -C ../libft fclean
+	make -C ../movements fclean
+	make -C ../list fclean
 
 re: fclean all
 

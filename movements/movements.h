@@ -6,7 +6,7 @@
 /*   By: stcozaci <stcozaci@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/04 15:29:28 by stcozaci          #+#    #+#             */
-/*   Updated: 2025/12/04 15:38:22 by stcozaci         ###   ########.fr       */
+/*   Updated: 2025/12/09 02:56:05 by stcozaci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,20 +19,24 @@
 # include "../libft/libft.h"
 
 //push functions
+void	push(t_list **take, t_list **to_push);
 void	pa(t_list **a, t_list **b);
 void	pb(t_list **b, t_list **a);
 
 //reverse rotate functions
+void	reverse_rotate(t_list **lst);
 void	rra(t_list **a);
 void	rrb(t_list **b);
 void	rrr(t_list **a, t_list **b);
 
 //rotate functions
+void	rotate(t_list **lst);
 void	ra(t_list **a);
 void	rb(t_list **b);
 void	rr(t_list **a, t_list **b);
 
 //swap functions
+void	swap(t_list **lst);
 void	sa(t_list **a);
 void	sb(t_list **b);
 void	ss(t_list **a, t_list **b);

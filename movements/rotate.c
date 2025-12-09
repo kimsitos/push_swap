@@ -6,13 +6,13 @@
 /*   By: stcozaci <stcozaci@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/02 16:21:24 by stcozaci          #+#    #+#             */
-/*   Updated: 2025/12/08 09:59:47 by stcozaci         ###   ########.fr       */
+/*   Updated: 2025/12/09 02:53:56 by stcozaci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-static void	rotate(t_list **lst)
+void	rotate(t_list **lst)
 {
 	t_list	*temp;
 
